@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="src/media/favicon.ico">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+
+	<style>
+		html,
+		body {
+			height: 100%;
+		}
+
+		body {
+			background-color: #fff;
+			font-family: sans-serif;
+			overflow: hidden;
+		}
+
+		h1 {
+			font-weight: normal;
+			font-size: 140%;
+		}
+
+		.ioLabel>.blocklyFlyoutLabelText {
+			font-style: italic;
+		}
+
+		.panes-container {
+			display: flex;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.left-pane {
+			width: 50%;
+		}
+
+		.panes-separator {
+			width: 1%;
+			background: url(./src/media/UI/resizePaneBG.png) center center no-repeat #EEEEEE;
+			position: relative;
+			cursor: col-resize;
+		}
+
+		.right-pane {
+			flex: auto;
+		}
+
+		.panes-container,
+		.panes-separator,
+		.left-pane,
+		.right-pane {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+
+		.blocklyTreeIconNone {
+			display: block !important;
+			border-color: rgb(255, 77, 106) !important;
+			width: 1.25rem !important;
+			height: 1.25rem !important;
+			border: 3px solid !important;
+			border-radius: 100% !important;
+			margin: 0 auto 0.125rem !important;
+			cursor: pointer !important;
+			text-align: center !important;
+		}
+
+		.blocklyTreeRow {
+			height: 55px !important;
+		}
+
+		#blockly-0 div:nth-child(2) {
+			display: grid;
+			grid-template-columns: auto auto auto auto;
+		}
+
+		#blockly-0 div:nth-child(2)>div {
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="panes-container">
+		<div class="left-pane" id="blocklyDiv"></div>
+		<div class="panes-separator" id="panes-separator"></div>
+		<iframe class="right-pane" id="preview"></iframe>
+	</div>
+
+	<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+		<category name="Search" custom="SEARCH" colour="#FFFFFF"></category>
+		<category name="Components" colour="#2196F3">
+			<block type="CI1"></block>
+			<block type="CI2"></block>
+		</category>
+		<category name="Attributes" colour="#E91E63">
+			<block type="PROP_container"></block>
+			<block type="PROP_position"></block>
+			<block type="PROP_relativeDistance"></block>
+			<block type="PROP_width"></block>
+			<block type="PROP_height"></block>
+			<block type="PROP_text"></block>
+			<block type="PROP_title"></block>
+			<block type="PROP_description"></block>
+			<block type="PROP_source"></block>
+			<block type="PROP_backgroundColor"></block>
+			<block type="PROP_fontColor"></block>
+			<block type="PROP_fontStyle"></block>
+			<block type="PROP_transparency"></block>
+		</category>
+		<category name="ُEvents" colour="#FFBF00">
+			<block type="E1"></block>
+			<block type="E2"></block>
+			<block type="E3"></block>
+			<block type="E4"></block>
+			<block type="E5"></block>
+			<block type="E6"></block>
+			<block type="E7"></block>
+			<block type="E8"></block>
+			<block type="E9"></block>
+			<block type="E10"></block>
+			<block type="E11"></block>
+			<block type="E12"></block>
+			<block type="E13"></block>
+			<block type="E14"></block>
+			<block type="E15"></block>
+			<block type="E16"></block>
+			<block type="E17"></block>
+			<block type="E18"></block>
+			<block type="E19"></block>
+		</category>
+		<category name="Utilities" colour="#00E5FF">
+			<block type="CU1:3"></block>
+			<block type="CU4"></block>
+			<block type="CU5"></block>
+			<block type="CU6"></block>
+			<block type="CU7"></block>
+			<block type="CU8"></block>
+			<block type="CU9"></block>
+			<block type="CU10"></block>
+		</category>
+		<category name="Commands" colour="#ff5722">
+			<block type="S1A"></block>
+			<block type="S1B"></block>
+			<block type="S2A"></block>
+			<block type="S2B"></block>
+			<block type="S2C"></block>
+			<block type="S2D"></block>
+			<block type="S2E"></block>
+			<block type="S3A"></block>
+			<block type="S3B"></block>
+			<block type="S4A"></block>
+			<block type="S4B"></block>
+			<block type="S5A"></block>
+			<block type="S5B"></block>
+			<block type="S6A"></block>
+			<block type="S6B"></block>
+			<block type="S7"></block>
+			<block type="S8"></block>
+			<block type="S9"></block>
+			<block type="S10"></block>
+			<block type="S11"></block>
+			<block type="S12"></block>
+			<block type="S13"></block>
+			<block type="S14"></block>
+		</category>
+		<category name="Conditions" colour="#02ee12">
+			<block type="logicOperator"></block>
+			<block type="Co1:4"></block>
+			<block type="Co5"></block>
+			<block type="Co6:8"></block>
+			<block type="Co9:10"></block>
+			<block type="Co11:12"></block>
+		</category>
+		<category name="Text Operators" colour="#575E75">
+			<block type="text"></block>
+			<block type="textMultiline"></block>
+			<block type="O1:7"></block>
+			<block type="O8"></block>
+			<block type="O9"></block>
+			<block type="O10"></block>
+			<block type="O11"></block>
+			<block type="O12"></block>
+			<block type="O13"></block>
+			<block type="O14"></block>
+			<block type="O15"></block>
+			<block type="O16"></block>
+			<block type="O17"></block>
+			<block type="O18"></block>
+			<block type="O20"></block>
+			<block type="O21"></block>
+			<block type="O22"></block>
+			<block type="O23"></block>
+		</category>
+		</category>
+		<category name="Lists" colour="#1DE9B6">
+			<block type="numberedList"></block>
+			<block type="labelledList"></block>
+		</category>
+	</xml>
+</body>
+
+</html>

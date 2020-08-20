@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "media/*": ["./src/media/*"],
+        "core/*": ["./src/JS/core/*"],
+        "blocks/*": ["./src/JS/blocks/*"],
+        "blocklyMods/*": ["./src/JS/blocklyMods/*"],
+        "thirdParty/*": ["./src/JS/thirdParty/*"],
+        "translations/*": ["./src/JS/translations/*"],
+        "generator/*": ["./src/JS/generator/*"]
+      }
+    },
+    "exclude": ["dist"]
+  }
