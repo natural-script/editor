@@ -1,5 +1,7 @@
 # NaturalScript Editor
 
+[![Build Status](https://travis-ci.org/project-jste/editor.svg?branch=master)](https://travis-ci.org/project-jste/editor)
+
 NaturalScript Editor is a blockly-based app which has been designed especially to make web developing easier than before.
 
 ## Official Blog On Medium:
