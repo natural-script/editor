@@ -1,7 +1,8 @@
 import * as Blockly from 'blockly/core';
 import appendDefaultBlock from 'blocks/appendDefaultBlock'
+import '@blockly/field-slider';
 const importBlockIcon = require.context("media/blockIcons", true, /\.(png|svg)$/);
-import {FieldSlider} from '@blockly/field-slider';
+
 const attributesCommonProps = {
     "inputsInline": true,
     "previousStatement": "prop",

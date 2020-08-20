@@ -45,7 +45,6 @@
     "terser-webpack-plugin": "",
     "url-loader": "",
     "webpack": "",
-    "webpack-bundle-analyzer": "",
     "webpack-cli": "",
     "webpack-dev-server": "",
     "webpack-modernizr-loader": "",

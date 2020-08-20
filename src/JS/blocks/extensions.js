@@ -32,7 +32,7 @@ const defaultBlocksData = {
 	"PROP_backgroundColor": [["value", "textDefault"]],
 	"PROP_fontColor": [["value", "textDefault"]],
 	"PROP_fontStyle": [["value", "textDefault"]],
-	"PROP_transparency": [["value", "textDefault"]],
+	"PROP_transparency": [["value", "sliderDefault"]],
 	"E1": [["target", "textDefault"]],
 	"E2": [["target", "textDefault"]],
 	"E3": [["target", "textDefault"]],

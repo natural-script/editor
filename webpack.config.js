@@ -2,8 +2,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
 const CompressionPlugin = require("compression-webpack-plugin");
 const NpmInstallPlugin = require("webpack-plugin-install-deps");
 const path = require("path");
@@ -25,11 +23,8 @@ module.exports = (env, argv) => {
     },
     plugins: [
       // new NpmInstallPlugin(),
-      // new BundleAnalyzerPlugin({
-      //   analyzerMode: 'static'
-      // }),
-      // new CompressionPlugin(),
-      // new OptimizeCssAssetsPlugin(),
+      new CompressionPlugin(),
+      new OptimizeCssAssetsPlugin(),
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
