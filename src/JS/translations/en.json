@@ -1,4 +1,10 @@
 {
+    "@metadata": {
+        "author": "Ellen Spertus <ellen.spertus@gmail.com>",
+        "lastupdated": "2020-06-25 16:02:02.440339",
+        "locale": "en",
+        "messagedocumentation": "qqq"
+    },
     "ADD_COMMENT": "Add Comment",
     "CANNOT_DELETE_VARIABLE_PROCEDURE": "Can't delete the variable '%1' because it's part of the definition of the function '%2'",
     "CHANGE_VALUE_TITLE": "Change value:",
