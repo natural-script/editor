@@ -1,6 +1,8 @@
 import * as Blockly from 'blockly/core';
+import appendDefaultBlock from 'blocks/appendDefaultBlock'
 import {createMinusField} from '@blockly/block-plus-minus/src/field_minus';
 import {createPlusField} from '@blockly/block-plus-minus/src/field_plus';
+const importBlockIcon = require.context("media/blockIcons", true, /\.(png|svg)$/);
 
 const numberedListCreateMutator = {
     itemCount_: 0,
@@ -56,7 +58,7 @@ const numberedListCreateMutator = {
 };
 const numberedListCreateHelper = function () {
     this.getInput('EMPTY').insertFieldAt(0, createPlusField(), 'PLUS');
-    this.getInput('EMPTY').insertFieldAt(1, new Blockly.FieldImage("./assets/media/blockIcons/numberedList.png", 32, 32, "*"), 'blockIcon');
+    this.getInput('EMPTY').insertFieldAt(1, new Blockly.FieldImage(importBlockIcon("./numberedList.png").default, 32, 32, "*"), 'blockIcon');
     this.getInput('EMPTY').insertFieldAt(2, new Blockly.FieldLabel("Numbered List"), 'blockIcon');
     this.updateShape_(1);
 };
@@ -122,7 +124,7 @@ const labelledListCreateMutator = {
 };
 const labelledListCreateHelper = function () {
     this.getInput('EMPTY').insertFieldAt(0, createPlusField(), 'PLUS');
-    this.getInput('EMPTY').insertFieldAt(1, new Blockly.FieldImage("./assets/media/blockIcons/labelledList.png", 32, 32, "*"), 'blockIcon');
+    this.getInput('EMPTY').insertFieldAt(1, new Blockly.FieldImage(importBlockIcon("./labelledList.png").default, 32, 32, "*"), 'blockIcon');
     this.getInput('EMPTY').insertFieldAt(2, new Blockly.FieldLabel("Labelled List"), 'blockIcon');
     this.updateShape_(1);
 };

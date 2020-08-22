@@ -66,7 +66,7 @@ Blockly.Blocks['CU8'] = {
 Blockly.Blocks['CU9'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage(importBlockIcon("./labelledList.png").default), 32, 32, "*")
+            .appendField(new Blockly.FieldImage(importBlockIcon("./labelledList.png").default, 32, 32, "*"))
             .appendField("For every");
         this.appendValueInput('varName');
         this.appendDummyInput()

@@ -1,4 +1,5 @@
 import * as Blockly from 'blockly/core';
+import English from 'translations/en.json'
 import { WorkspaceSearch } from 'core/search';
 
 const toolbox = document.getElementById("toolbox");
@@ -35,6 +36,7 @@ const options = {
     }
 };
 
+Blockly.setLocale(English)
 /* Inject your workspace */
 const workspace = Blockly.inject('blocklyDiv', options);
 

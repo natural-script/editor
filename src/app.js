@@ -1,7 +1,9 @@
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+OfflinePluginRuntime.install();
+
 import 'normalize.css/normalize.css'
 import 'blocklyMods/blockly'
 import 'blocklyMods/toolbox'
-import 'translations/en'
 import 'blocks/appendDefaultBlock'
 import 'blocks/mutators'
 import 'blocks/mixins'

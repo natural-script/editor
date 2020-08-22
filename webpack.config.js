@@ -1,13 +1,11 @@
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
 const NpmInstallPlugin = require("webpack-plugin-install-deps");
 const path = require("path");
 module.exports = (env, argv) => {
   return {
-    // devtool: argv.mode == `development` ? `inline-source-map` : `source-map`,
     resolve: {
       alias: {
         modernizr$: path.resolve(__dirname, "./.modernizrrc.js"),
@@ -23,8 +21,6 @@ module.exports = (env, argv) => {
     },
     plugins: [
       // new NpmInstallPlugin(),
-      new CompressionPlugin(),
-      new OptimizeCssAssetsPlugin(),
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
@@ -32,7 +28,8 @@ module.exports = (env, argv) => {
       }), new HtmlWebpackPlugin({
         title: 'NS Editor',
         template: 'src/index.html'
-      })
+      }),
+      new OfflinePlugin()
     ],
     entry: ["core-js/stable", "regenerator-runtime/runtime", "./src/app.js"],
     node: {
@@ -42,10 +39,9 @@ module.exports = (env, argv) => {
     output: {
       filename: "bundle.min.js"
     },
-    /* 
-    	optimization: {
-          minimizer: [new TerserPlugin()]
-        }, */
+    optimization: {
+      minimizer: [new TerserPlugin()]
+    },
     module: {
       rules: [{
           test: /\.js$/,
