@@ -1,6 +1,7 @@
 # NaturalScript Editor
 
 [![Build Status](https://travis-ci.org/project-jste/editor.svg?branch=master)](https://travis-ci.org/project-jste/editor)
+[![Crowdin](https://badges.crowdin.net/naturalscript/localized.svg)](https://crowdin.com/project/naturalscript)
 <a href="https://github.com/google/blockly"><img src="https://tinyurl.com/built-on-blockly" /></a>
 
 NaturalScript Editor is a blockly-based app which has been designed especially to make web developing easier than before.
