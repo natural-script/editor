@@ -1,19 +1,4 @@
 {
-	"@metadata": {
-		"authors": [
-			"Diyariq",
-			"DonAdnan",
-			"Meno25",
-			"Mido",
-			"Moud hosny",
-			"Samir",
-			"Test Create account",
-			"ديفيد",
-			"محمد أحمد عبد الفتاح",
-			"아라"
-		],
-        "locale": "arz"
-	},
 	"VARIABLES_DEFAULT_NAME": "البند",
 	"UNNAMED_KEY": "غير مسمى",
 	"TODAY": "اليوم",
