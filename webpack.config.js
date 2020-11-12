@@ -2,7 +2,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
-const NpmInstallPlugin = require("webpack-plugin-install-deps");
 const path = require("path");
 module.exports = (env, argv) => {
   return {
@@ -20,7 +19,6 @@ module.exports = (env, argv) => {
       }
     },
     plugins: [
-      // new NpmInstallPlugin(),
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",

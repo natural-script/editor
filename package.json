@@ -46,7 +46,6 @@
     "webpack-cli": "",
     "webpack-dev-server": "",
     "webpack-modernizr-loader": "",
-    "webpack-plugin-install-deps": "",
     "gh-pages": "",
     "workbox-webpack-plugin": ""
   },
