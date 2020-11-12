@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.config.js --mode production --progress",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "test": "webpack-dev-server --config ./webpack.config.js --mode development --port 8080"
+    "test": "webpack serve --config ./webpack.config.js --mode development --port 8080"
   },
   "dependencies": {
     "@babel/core": "",
@@ -17,7 +17,6 @@
     "@blockly/field-slider": "",
     "async-replace-es6": "",
     "autoprefixer": "",
-    "offline-plugin": "",
     "babel-core": "",
     "babel-loader": "",
     "babel-minify-webpack-plugin": "",
@@ -48,7 +47,8 @@
     "webpack-dev-server": "",
     "webpack-modernizr-loader": "",
     "webpack-plugin-install-deps": "",
-    "gh-pages": ""
+    "gh-pages": "",
+    "workbox-webpack-plugin": ""
   },
   "repository": {
     "type": "git",

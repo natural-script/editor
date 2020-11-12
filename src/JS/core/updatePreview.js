@@ -2,7 +2,7 @@ import * as Blockly from 'blockly/core'
 
 let oldNsCode;
 document.addEventListener('keydown', function (event) {
-    if (event.ctrlKey && event.key === 'p') {
+    if (event.ctrlKey && event.code === 'KeyP') {
         event.preventDefault();
         const nsCode = Blockly.NS.workspaceToCode(Blockly.mainWorkspace);
         if (nsCode != oldNsCode) {

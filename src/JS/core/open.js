@@ -1,7 +1,7 @@
 import * as Blockly from 'blockly/core'
 
 document.addEventListener('keydown', function (event) {
-    if (event.ctrlKey && event.key === 'o') {
+    if (event.ctrlKey && event.code === 'KeyO') {
         event.preventDefault();
         var input = document.createElement('input');
         input.type = 'file';

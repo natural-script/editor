@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const NpmInstallPlugin = require("webpack-plugin-install-deps");
 const path = require("path");
 module.exports = (env, argv) => {
@@ -28,13 +28,12 @@ module.exports = (env, argv) => {
       }), new HtmlWebpackPlugin({
         title: 'NS Editor',
         template: 'src/index.html'
+      }), new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true
       }),
-      new OfflinePlugin()
     ],
     entry: ["core-js/stable", "regenerator-runtime/runtime", "./src/app.js"],
-    node: {
-      fs: "empty"
-    },
     target: "web",
     output: {
       filename: "bundle.min.js"

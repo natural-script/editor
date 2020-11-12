@@ -1,6 +1,3 @@
-import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-OfflinePluginRuntime.install();
-
 import 'normalize.css/normalize.css'
 import 'blocklyMods/blockly'
 import 'blocklyMods/toolbox'
@@ -18,3 +15,13 @@ import 'core/open'
 import 'core/updatePreview'
 import 'core/save'
 import 'core/export'
+
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('/service-worker.js').then(registration => {
+			console.log('SW registered: ', registration);
+		}).catch(registrationError => {
+			console.log('SW registration failed: ', registrationError);
+		});
+	});
+}
