@@ -3,7 +3,7 @@ script: npm start
 node_js:
   - node
 before_install:
-  - npm install --force
+  - npm install --legacy-peer-deps
 notifications:
   webhooks:
     urls:
