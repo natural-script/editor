@@ -99,5 +99,11 @@
     "CU4": "%1 After a period of %2",
     "CU5": "%1 Every a period of %2",
     "CU6": "%1 Define the function %2 with the following commands",
-    "CU7": "%1 Define the style %2 with the following properties"
+    "CU7": "%1 Define the style %2 with the following properties",
+    "CU8I": "%1 After finishing executing the previous command,",
+    "CU8II": "get the value of the returned %1",
+    "CU8III": "then do the following:%1",
+    "CU9": "%1 For every %2 in the list %3",
+    "CU10I": "%1 After finishing executing the previous command,",
+    "CU10II": "do the following:%1"
 }
