@@ -40,68 +40,6 @@ const blockIconCommonProps = {
     "flipRtl": true
 }
 
-
-Blockly.Blocks['CU8'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("After finishing executing the previous command,");
-        this.appendDummyInput()
-            .appendField("get the value of the returned");
-        this.appendValueInput('varName');
-        this.appendStatementInput('nestedCommands')
-            .appendField('then do the following:')
-            .setCheck('command');
-        this.setPreviousStatement(true, "parent");
-        this.setNextStatement(true, "parent");
-        this.setInputsInline(true);
-        this.setColour('#00E5FF');
-        this.setTooltip("");
-        this.setHelpUrl("");
-        this.appendShadowBlocks();
-    },
-    appendShadowBlocks: function () {
-        appendDefaultBlock(this, "varName", "textDefault");
-    }
-};
-Blockly.Blocks['CU9'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField(new Blockly.FieldImage(importBlockIcon("./labelledList.png").default, 32, 32, "*"))
-            .appendField("For every");
-        this.appendValueInput('varName');
-        this.appendDummyInput()
-            .appendField("in the list");
-        this.appendValueInput('listName');
-        this.appendStatementInput('nestedCommands')
-            .setCheck('command');
-        this.setPreviousStatement(true, "parent");
-        this.setNextStatement(true, "parent");
-        this.setInputsInline(true);
-        this.setColour('#00E5FF');
-        this.setTooltip("");
-        this.setHelpUrl("");
-        this.appendShadowBlocks();
-    },
-    appendShadowBlocks: function () {
-        appendDefaultBlock(this, "varName", "textDefault");
-        appendDefaultBlock(this, "listName", "textDefault");
-    }
-};
-Blockly.Blocks['CU10'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("After finishing executing the previous command,");
-        this.appendStatementInput('nestedCommands')
-            .appendField("do the following:")
-            .setCheck('command');
-        this.setPreviousStatement(true, "parent");
-        this.setNextStatement(true, "parent");
-        this.setInputsInline(true);
-        this.setColour('#00E5FF');
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 Blockly.Blocks['logicOperator'] = {
     init: function () {
         this.appendValueInput('LHS')
@@ -1366,6 +1304,65 @@ Blockly.defineBlocksWithJsonArray([{
             "check": "prop"
         }],
         "extensions": ["CU7Extention"],
+        ...utilsCommonProps
+    },{
+        "type": "CU8",
+        "message0": "%{BKY_CU8I}",
+        "args0": [{
+            "type": "field_image",
+            "src": importBlockIcon("./design.png").default,
+            ...blockIconCommonProps
+        }],
+        "message1": "%{BKY_CU8II}",
+        "args1": [{
+            "type": "input_value",
+            "name": "varName",
+        }],
+        "message2": "%{BKY_CU8III}",
+        "args2": [{
+            "type": "input_statement",
+            "name": "nestedCommands",
+            "check": "command"
+        }],
+        "extensions": ["CU8Extention"],
+        ...utilsCommonProps,
+        "inputsInline": false
+    },{
+        "type": "CU9",
+        "message0": "%{BKY_CU9}",
+        "args0": [{
+            "type": "field_image",
+            "src": importBlockIcon("./design.png").default,
+            ...blockIconCommonProps
+        }, {
+            "type": "input_value",
+            "name": "varName",
+        }, {
+            "type": "input_value",
+            "name": "listName",
+        }],
+        "message1": "%1",
+        "args1": [{
+            "type": "input_statement",
+            "name": "nestedCommands",
+            "check": "command"
+        }],
+        "extensions": ["CU9Extention"],
+        ...utilsCommonProps
+    },{
+        "type": "CU10",
+        "message0": "%{BKY_CU10I}",
+        "args0": [{
+            "type": "field_image",
+            "src": importBlockIcon("./design.png").default,
+            ...blockIconCommonProps
+        }],
+        "message1": "%{BKY_CU8II}",
+        "args1": [{
+            "type": "input_statement",
+            "name": "nestedCommands",
+            "check": "command"
+        }],
         ...utilsCommonProps
     }, {
         "type": "font",

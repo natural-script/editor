@@ -20,6 +20,8 @@ const defaultBlocksData = {
 	"CU5": [["period", "timeField"]],
 	"CU6": [["name", "textDefault"]],
 	"CU7": [["name", "textDefault"]],
+	"CU8": [["varName", "textDefault"]],
+	"CU9": [["varName", "textDefault"], ["listName", "textDefault"]],
 	"PROP_container": [["value", "textDefault"]],
 	"PROP_position": [["value", "textDefault"]],
 	"PROP_relativeDistance": [["value", "textDefault"]],
